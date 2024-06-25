@@ -108,17 +108,17 @@
         </div>
       </section>
       <section
-        class="score flex justify-center items-center min-h-screen hidden"
+        id="score" class="flex justify-center items-center min-h-screen hidden"
       >
         <div
           class="bg-[#FFFFFF33] text-[#FFFFFF] text-center p-11 rounded-lg space-y-4"
         >
           <h1 class="text-6xl">
             <span class="font-extrabold">Score :</span>
-            <span class="font-medium">14</span>
+            <span id="game-score" class="font-medium">14</span>
           </h1>
           <button
-            class="bg-white text-black text-2xl font-semibold py-4 px-8 rounded-lg"
+            onclick="play()" class="bg-white text-black text-2xl font-semibold py-4 px-8 rounded-lg"
           >
             Play Again
           </button>
