@@ -8,6 +8,30 @@
 //     playgroundSection.classList.remove('hidden');
 // }
 
+function buttonPressed(event){
+    const playerPressed = event.key;
+    console.log(playerPressed);
+
+    //get the expected to press
+    const currentAlphabetElement = document.getElementById('current-alphabet');
+    const currentAlphabet = currentAlphabetElement.innerText;
+    const expectedAlphabet = currentAlphabet.toLowerCase();
+    console.log(expectedAlphabet);
+
+    //cheak mathced or not
+    if(playerPressed === expectedAlphabet){
+        console.log('you get a point');
+        removeBackgroundById(expectedAlphabet)
+        contineGame();
+    }else{
+        console.log('you missed, you lost a life')
+    }
+}
+
+//capture keyboard key press
+document.addEventListener('keyup', buttonPressed)
+
+
 
 function contineGame(){
     const alphabet = getRandomAlphabet()
