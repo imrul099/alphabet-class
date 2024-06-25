@@ -21,10 +21,32 @@ function buttonPressed(event){
     //cheak mathced or not
     if(playerPressed === expectedAlphabet){
         console.log('you get a point');
+        //update score:
+        //1. get the current score
+        const currentScoreElement = document.getElementById('current-score');
+        const currentScoreText = currentScoreElement.innerText;
+        const currentScore = parseInt(currentScoreText);
+        //2. increase the score by 1
+        const newScore = currentScore + 1;
+        currentScoreElement.innerText = newScore;
+        //3. show the updated score
+
+
+        //start a new round
         removeBackgroundById(expectedAlphabet)
         contineGame();
     }else{
-        console.log('you missed, you lost a life')
+        console.log('you missed, you lost a life');
+        //setp-1: get the current life number;
+        const currentLifeElement = document.getElementById('current-life');
+        const currentLifeText = currentLifeElement.innerText;
+        const currentLife = parseInt(currentLifeText);
+        //step-2: reduce the life count:
+        const remainingLife = currentLife - 1;
+        currentLifeElement.innerText = remainingLife;
+        //step-3: display the updated life count;
+        
+
     }
 }
 
